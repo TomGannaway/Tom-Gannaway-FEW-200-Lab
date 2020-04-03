@@ -1,0 +1,25 @@
+<article>
+  <header>
+    <h3>Your Meal History</h3>
+  </header>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Bill Amount</th>
+        <th scope="col">Tip Percentage</th>
+        <th scope="col">Tip Amount</th>
+        <th scope="col">Total Bill</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let meal of mealHistory">
+        <th scope="row">{{ meal.date | date }}</th>
+        <td>{{ meal.billAmount | currency}}</td>
+        <td>{{ meal.tipPercentage | percent}}</td>
+        <td>{{ meal.tipAmount | currency }}</td>
+        <td>{{ meal.totalBill | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+</article>

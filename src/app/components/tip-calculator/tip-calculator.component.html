@@ -1,0 +1,40 @@
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text"
+          id="basic-addon1">$</span>
+  </div>
+  <input type="number"
+         #amount
+         (keyup)="updateAmount(amount.valueAsNumber)"
+         class="form-control">
+</div>
+<div class="btn-group"
+     role="group"
+     aria-label="Basic example">
+  <button type="button"
+          [disabled]="tipPercentage === .1"
+          (click)="changeTipAmount(.1)"
+          class="btn btn-secondary">10%</button>
+  <button type="button"
+          [disabled]="tipPercentage === .15"
+          (click)="changeTipAmount(.15)"
+          class="btn btn-secondary">15%</button>
+  <button type="button"
+          [disabled]="tipPercentage === .2"
+          (click)="changeTipAmount(.2)"
+          class="btn btn-secondary">20%</button>
+  <button type="button"
+          [disabled]="tipPercentage === .25"
+          (click)="changeTipAmount(.25)"
+          class="btn btn-secondary">25%</button>
+</div>
+<p>You are tipping {{ tipPercentage | percent}}</p>
+<ul class="list-group">
+  <li class="list-group-item">Bill Amount: {{billAmount | currency }}</li>
+  <li class="list-group-item">Tip Percentage: {{ tipPercentage | percent}} </li>
+  <li class="list-group-item">Amount of Tip: {{ amountOfTip | currency }}</li>
+  <li class="list-group-item">Total to be Paid: {{ totalToBePaid | currency }} </li>
+</ul>
+<button class="btn btn-success"
+        [disabled]="saved"
+        (click)="addMeal()">Save Meal In History</button>

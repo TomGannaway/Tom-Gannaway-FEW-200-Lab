@@ -1,0 +1,17 @@
+<button type="button"
+        (click)="pickANumber()"
+        class="btn btn-secondary">Pick a Number</button>
+<br><br>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text"
+          id="basic-addon1">Enter a Guess</span>
+  </div>
+  <input type="number"
+         #guess
+         class="form-control">
+  <br>
+  <button type="button"
+          (click)="evaluateGuess()"
+          class="btn btn-secondary">Click Here</button>
+</div>
